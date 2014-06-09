@@ -1,4 +1,5 @@
 CC=gcc
+LDFLAGS=-lutil
 
 all: termi
 
@@ -9,8 +10,8 @@ OBJS += main.o
 	@$(CC) -c $< -o $@
 
 termi: $(OBJS)
-	gcc $(OBJS) -o termi
-
+	@echo "  LD            $@"
+	@gcc $(LDFLAGS) $(OBJS) -o termi
 clean:
 	rm -rf `find . | grep *\.o`
 	rm termi
