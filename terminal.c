@@ -14,6 +14,7 @@ int register_terminal(terminal_t *term)
 			return -ENOMEM;
 	}
 
+	term->init_instance(term);
 	terminals[terms] = term;
 
 	term->in_use = 0;

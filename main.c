@@ -16,6 +16,7 @@
 
 terminal_t __test_term = {
 	.receive_char = test_term_receive,
+	.init_instance = test_term_init,
 };
 
 int main(int argc, char *argv[])
