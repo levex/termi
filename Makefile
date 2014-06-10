@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-Iinclude
-LDFLAGS=-lutil
+CFLAGS=-Iinclude $(shell pkg-config --cflags gtk+-2.0)
+LDFLAGS=-lutil $(shell pkg-config --libs gtk+-2.0)
 
 all: termi
 
