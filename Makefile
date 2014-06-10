@@ -1,17 +1,20 @@
 CC=gcc
+CFLAGS=-Iinclude
 LDFLAGS=-lutil
 
 all: termi
 
-OBJS += main.o
+OBJS += main.o terminal.o
+
+include test/Makefile
 
 %.o: %.c
 	@echo "  CC            $@"
-	@$(CC) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 termi: $(OBJS)
 	@echo "  LD            $@"
 	@gcc $(LDFLAGS) $(OBJS) -o termi
 clean:
-	rm -rf `find . | grep *\.o`
+	rm -rf `find . | grep \\.o`
 	rm termi

@@ -1,0 +1,1 @@
+OBJS += test/term.o
