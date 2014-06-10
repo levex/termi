@@ -16,5 +16,5 @@ termi: $(OBJS)
 	@echo "  LD            $@"
 	@gcc $(LDFLAGS) $(OBJS) -o termi
 clean:
-	rm -rf `find . | grep \\.o`
-	rm termi
+	-rm -rf $(OBJS)
+	-rm termi
